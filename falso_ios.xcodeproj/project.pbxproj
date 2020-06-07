@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,12 @@
 		AD759F0F248C0CA100496FE5 /* PodcastStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F0E248C0CA100496FE5 /* PodcastStore.swift */; };
 		AD759F11248C0F7B00496FE5 /* BlogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F10248C0F7B00496FE5 /* BlogStore.swift */; };
 		AD759F13248C0FDF00496FE5 /* BlogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F12248C0FDF00496FE5 /* BlogModels.swift */; };
+		AD759F17248C111000496FE5 /* BlogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F16248C111000496FE5 /* BlogList.swift */; };
+		AD759F19248C112B00496FE5 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F18248C112B00496FE5 /* Environment.swift */; };
+		AD759F1B248C14B900496FE5 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F1A248C14B900496FE5 /* SafariView.swift */; };
+		AD759F1D248C1BCF00496FE5 /* PodcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F1C248C1BCF00496FE5 /* PodcastList.swift */; };
+		AD759F20248C1D5800496FE5 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AD759F1F248C1D5800496FE5 /* KingfisherSwiftUI */; };
+		AD759F22248C270B00496FE5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F21248C270B00496FE5 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,11 @@
 		AD759F0E248C0CA100496FE5 /* PodcastStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastStore.swift; sourceTree = "<group>"; };
 		AD759F10248C0F7B00496FE5 /* BlogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogStore.swift; sourceTree = "<group>"; };
 		AD759F12248C0FDF00496FE5 /* BlogModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogModels.swift; sourceTree = "<group>"; };
+		AD759F16248C111000496FE5 /* BlogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogList.swift; sourceTree = "<group>"; };
+		AD759F18248C112B00496FE5 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		AD759F1A248C14B900496FE5 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		AD759F1C248C1BCF00496FE5 /* PodcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastList.swift; sourceTree = "<group>"; };
+		AD759F21248C270B00496FE5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD759F20248C1D5800496FE5 /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +101,10 @@
 		AD759F03248C099700496FE5 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AD759F16248C111000496FE5 /* BlogList.swift */,
+				AD759F1A248C14B900496FE5 /* SafariView.swift */,
+				AD759F1C248C1BCF00496FE5 /* PodcastList.swift */,
+				AD759F21248C270B00496FE5 /* WebView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -98,6 +114,7 @@
 			children = (
 				AD759F0E248C0CA100496FE5 /* PodcastStore.swift */,
 				AD759F10248C0F7B00496FE5 /* BlogStore.swift */,
+				AD759F18248C112B00496FE5 /* Environment.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -127,6 +144,9 @@
 			dependencies = (
 			);
 			name = falso_ios;
+			packageProductDependencies = (
+				AD759F1F248C1D5800496FE5 /* KingfisherSwiftUI */,
+			);
 			productName = falso_ios;
 			productReference = AD3C3DE6248C095100C67482 /* falso_ios.app */;
 			productType = "com.apple.product-type.application";
@@ -155,6 +175,9 @@
 				Base,
 			);
 			mainGroup = AD3C3DDD248C095100C67482;
+			packageReferences = (
+				AD759F1E248C1D5800496FE5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = AD3C3DE7248C095100C67482 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -183,10 +206,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD759F0D248C0B8400496FE5 /* PodcastModels.swift in Sources */,
+				AD759F17248C111000496FE5 /* BlogList.swift in Sources */,
 				AD759F13248C0FDF00496FE5 /* BlogModels.swift in Sources */,
 				AD3C3DEA248C095100C67482 /* AppDelegate.swift in Sources */,
+				AD759F1D248C1BCF00496FE5 /* PodcastList.swift in Sources */,
+				AD759F1B248C14B900496FE5 /* SafariView.swift in Sources */,
+				AD759F19248C112B00496FE5 /* Environment.swift in Sources */,
 				AD759F0F248C0CA100496FE5 /* PodcastStore.swift in Sources */,
 				AD759F11248C0F7B00496FE5 /* BlogStore.swift in Sources */,
+				AD759F22248C270B00496FE5 /* WebView.swift in Sources */,
 				AD3C3DEC248C095100C67482 /* SceneDelegate.swift in Sources */,
 				AD3C3DEE248C095100C67482 /* ContentView.swift in Sources */,
 			);
@@ -382,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD759F1E248C1D5800496FE5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD759F1F248C1D5800496FE5 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD759F1E248C1D5800496FE5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD3C3DDE248C095100C67482 /* Project object */;
 }

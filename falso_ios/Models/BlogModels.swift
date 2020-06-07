@@ -18,4 +18,13 @@ struct Blog: Codable, Identifiable {
     let title: String
     let link: URL
     let pubDate: String
+    let content: String
+    
+    enum CodingKeys: String, CodingKey {
+        case creator
+        case title
+        case link
+        case pubDate
+        case content = "content:encoded"
+    }
 }

@@ -11,7 +11,7 @@ import Combine
 
 class BlogStore: ObservableObject {
     @Published var blogs: [Blog] = []
-    func fetchPodcasts() {
+    func fetchBlogs() {
         let endpoint = URL(string: "http://www.falso.co/api/medium/getStories")
         guard let url = endpoint else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -21,5 +21,9 @@ class BlogStore: ObservableObject {
                 self.blogs = data.items
             }
         }.resume()
+    }
+    
+    init() {
+        fetchBlogs()
     }
 }

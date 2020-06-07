@@ -22,4 +22,8 @@ class PodcastStore: ObservableObject {
             }
         }.resume()
     }
+    
+    init() {
+        fetchPodcasts()
+    }
 }

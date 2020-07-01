@@ -39,11 +39,13 @@ class BlogStore: ObservableObject {
     
     init() {
         fetchBlogs() { resp in
-            if case .success(let blogs) = resp {
-                self.blogs = blogs
-            } else if case .failure(let error) = resp {
-                self.errorMessage = error.localizedDescription
-                self.showError = true
+            DispatchQueue.main.async {
+                if case .success(let blogs) = resp {
+                    self.blogs = blogs
+                } else if case .failure(let error) = resp {
+                    self.errorMessage = error.localizedDescription
+                    self.showError = true
+                }
             }
         }
     }

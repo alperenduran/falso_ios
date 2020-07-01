@@ -11,19 +11,40 @@ import Combine
 
 class BlogStore: ObservableObject {
     @Published var blogs: [Blog] = []
-    func fetchBlogs() {
-        let endpoint = URL(string: "http://www.falso.co/api/medium/getStories")
-        guard let url = endpoint else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
-                let data = try! JSONDecoder().decode(BlogResponse.self, from: data!)
-                self.blogs = data.items
+    @Published var errorMessage = ""
+    @Published var showError = false
+    func fetchBlogs(
+        completion: @escaping (
+        Result<[Blog], Error>
+        )
+        -> Void
+    ) {
+        let url = URL(string: "http://www.falso.co/api/medium/getStories")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(error!))
+                return
             }
-        }.resume()
+            do {
+                let data = try JSONDecoder().decode(BlogResponse.self, from: data!)
+                let blogs = data.items
+                completion(.success(blogs))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
     }
+
     
     init() {
-        fetchBlogs()
+        fetchBlogs() { resp in
+            if case .success(let blogs) = resp {
+                self.blogs = blogs
+            } else if case .failure(let error) = resp {
+                self.errorMessage = error.localizedDescription
+                self.showError = true
+            }
+        }
     }
 }

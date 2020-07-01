@@ -15,6 +15,12 @@ struct BlogList: View {
             List(self.blogStore.blogs) { blog in
                 BlogView(blog: blog)
             }.navigationBarTitle("Blogs")
+            .alert(isPresented: $blogStore.showError) {
+                 Alert(
+                    title: Text("Error"),
+                    message: Text(blogStore.errorMessage)
+                )
+            }
         }
     }
 }
@@ -42,7 +48,8 @@ struct BlogView: View {
             }
             .sheet(isPresented: self.$showSheet) {
                 NavigationView {
-                    WebView(html: self.blog.content)
+                    WebView(html: self.blog.cssContent)
+                        .padding(.horizontal, 8)
                         .navigationBarTitle("\(self.blog.title)", displayMode: .inline)
                 }
         }

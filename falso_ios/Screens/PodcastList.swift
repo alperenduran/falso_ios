@@ -8,6 +8,7 @@
 
 import SwiftUI
 import KingfisherSwiftUI
+import AVFoundation
 
 struct PodcastList: View {
     @ObservedObject var podcastStore = PodcastStore()
@@ -16,12 +17,17 @@ struct PodcastList: View {
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top) {
-                        ForEach(self.podcastStore.podcast) { podcast in
+                        ForEach(self.podcastStore.podcasts) { podcast in
                             PodcastView(podcast: podcast)
                                 .frame(width: 250)
                                 .padding(.horizontal)
                         }
                     }.padding(.horizontal)
+                }.alert(isPresented: $podcastStore.showError) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(podcastStore.errorMessage)
+                    )
                 }
                     
                 Spacer()
@@ -46,6 +52,26 @@ struct PodcastView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 250.0, height: 250.0)
                 .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .onTapGesture {
+                    let task = URLSession.shared.downloadTask(with: self.podcast.podcastURL) { (data, resp, err) in
+                        
+                    
+                    do {
+                        let audioPlayer = try AVAudioPlayer(contentsOf: data!)
+                        try AVAudioSession.sharedInstance().setCategory(
+                            AVAudioSession.Category.playback,
+                            mode: AVAudioSession.Mode.default,
+                            options: [AVAudioSession.CategoryOptions.mixWithOthers]
+                        )
+                        audioPlayer.prepareToPlay()
+                        audioPlayer.play()
+                    
+                    } catch {
+                        print(error)
+                    }
+                    }
+                    task.resume()
+                }
             
             Text(podcast.title)
                 .font(.headline)

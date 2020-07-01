@@ -20,7 +20,7 @@ struct ContentView: View {
                 Image(systemName: "music.note.list")
                 Text("Podcast")
             }
-        }
+        }.accentColor(.red)
     }
 }
 

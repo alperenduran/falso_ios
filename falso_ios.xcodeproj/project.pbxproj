@@ -22,6 +22,10 @@
 		AD759F1D248C1BCF00496FE5 /* PodcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F1C248C1BCF00496FE5 /* PodcastList.swift */; };
 		AD759F20248C1D5800496FE5 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AD759F1F248C1D5800496FE5 /* KingfisherSwiftUI */; };
 		AD759F22248C270B00496FE5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD759F21248C270B00496FE5 /* WebView.swift */; };
+		ADD0F4BD24AE4A7C00754806 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0F4BC24AE4A7C00754806 /* Extensions.swift */; };
+		ADD0F4C024AE4D3900754806 /* TodayModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0F4BF24AE4D3900754806 /* TodayModels.swift */; };
+		ADD0F4C224AE4D9000754806 /* TodayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0F4C124AE4D9000754806 /* TodayStore.swift */; };
+		ADD0F4C424AE4DFD00754806 /* TodayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD0F4C324AE4DFD00754806 /* TodayList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,11 @@
 		AD759F1A248C14B900496FE5 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		AD759F1C248C1BCF00496FE5 /* PodcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastList.swift; sourceTree = "<group>"; };
 		AD759F21248C270B00496FE5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		ADD0F4BC24AE4A7C00754806 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ADD0F4BE24AE4B1B00754806 /* falso_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = falso_ios.entitlements; sourceTree = "<group>"; };
+		ADD0F4BF24AE4D3900754806 /* TodayModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModels.swift; sourceTree = "<group>"; };
+		ADD0F4C124AE4D9000754806 /* TodayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStore.swift; sourceTree = "<group>"; };
+		ADD0F4C324AE4DFD00754806 /* TodayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +83,7 @@
 		AD3C3DE8248C095100C67482 /* falso_ios */ = {
 			isa = PBXGroup;
 			children = (
+				ADD0F4BE24AE4B1B00754806 /* falso_ios.entitlements */,
 				AD759F0B248C0B7100496FE5 /* Models */,
 				AD759F04248C0AD900496FE5 /* Environment */,
 				AD759F03248C099700496FE5 /* Screens */,
@@ -84,6 +94,7 @@
 				AD3C3DF4248C095300C67482 /* LaunchScreen.storyboard */,
 				AD3C3DF7248C095300C67482 /* Info.plist */,
 				AD3C3DF1248C095300C67482 /* Preview Content */,
+				ADD0F4BC24AE4A7C00754806 /* Extensions.swift */,
 			);
 			path = falso_ios;
 			sourceTree = "<group>";
@@ -103,6 +114,7 @@
 				AD759F1A248C14B900496FE5 /* SafariView.swift */,
 				AD759F1C248C1BCF00496FE5 /* PodcastList.swift */,
 				AD759F21248C270B00496FE5 /* WebView.swift */,
+				ADD0F4C324AE4DFD00754806 /* TodayList.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -112,6 +124,7 @@
 			children = (
 				AD759F0E248C0CA100496FE5 /* PodcastStore.swift */,
 				AD759F10248C0F7B00496FE5 /* BlogStore.swift */,
+				ADD0F4C124AE4D9000754806 /* TodayStore.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -121,6 +134,7 @@
 			children = (
 				AD759F0C248C0B8400496FE5 /* PodcastModels.swift */,
 				AD759F12248C0FDF00496FE5 /* BlogModels.swift */,
+				ADD0F4BF24AE4D3900754806 /* TodayModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,12 +219,16 @@
 				AD759F0D248C0B8400496FE5 /* PodcastModels.swift in Sources */,
 				AD759F17248C111000496FE5 /* BlogList.swift in Sources */,
 				AD759F13248C0FDF00496FE5 /* BlogModels.swift in Sources */,
+				ADD0F4C224AE4D9000754806 /* TodayStore.swift in Sources */,
 				AD3C3DEA248C095100C67482 /* AppDelegate.swift in Sources */,
 				AD759F1D248C1BCF00496FE5 /* PodcastList.swift in Sources */,
+				ADD0F4C424AE4DFD00754806 /* TodayList.swift in Sources */,
 				AD759F1B248C14B900496FE5 /* SafariView.swift in Sources */,
 				AD759F0F248C0CA100496FE5 /* PodcastStore.swift in Sources */,
+				ADD0F4BD24AE4A7C00754806 /* Extensions.swift in Sources */,
 				AD759F11248C0F7B00496FE5 /* BlogStore.swift in Sources */,
 				AD759F22248C270B00496FE5 /* WebView.swift in Sources */,
+				ADD0F4C024AE4D3900754806 /* TodayModels.swift in Sources */,
 				AD3C3DEC248C095100C67482 /* SceneDelegate.swift in Sources */,
 				AD3C3DEE248C095100C67482 /* ContentView.swift in Sources */,
 			);
@@ -348,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = falso_ios/falso_ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"falso_ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 24276C4JVA;
@@ -359,6 +378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.falso.falso-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = falso_ios/falso_ios.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"falso_ios/Preview Content\"";
 				DEVELOPMENT_TEAM = 24276C4JVA;
@@ -379,6 +400,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "co.falso.falso-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

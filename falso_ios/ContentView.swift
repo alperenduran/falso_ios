@@ -18,7 +18,12 @@ struct ContentView: View {
             
             PodcastList().tabItem {
                 Image(systemName: "music.note.list")
-                Text("Podcast")
+                Text("Podcastler")
+            }
+            
+            TodayList().tabItem {
+                Image(systemName: "calendar")
+                Text("Bugün")
             }
         }.accentColor(.red)
     }

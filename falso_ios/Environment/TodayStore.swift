@@ -1,34 +1,34 @@
 //
-//  BlogStore.swift
+//  TodayStore.swift
 //  falso_ios
 //
-//  Created by Alperen Duran on 6.06.2020.
+//  Created by Alperen Duran on 2.07.2020.
 //  Copyright © 2020 Alperen Duran. All rights reserved.
 //
 
 import Foundation
 import Combine
 
-class BlogStore: ObservableObject {
-    @Published var blogs: [Blog] = []
+class TodayStore: ObservableObject {
+    @Published var matchs: [Match] = []
     @Published var errorMessage = ""
     @Published var showError = false
-    func fetchBlogs(
+    func fetchMatchs(
         completion: @escaping (
-        Result<[Blog], Error>
+        Result<[Match], Error>
         )
         -> Void
     ) {
-        let url = URL(string: "http://www.falso.co/api/medium/getStories")!
+        let url = URL(string: "http://www.falso.co/api/getToday")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))
                 return
             }
             do {
-                let data = try JSONDecoder().decode(BlogResponse.self, from: data!)
-                let blogs = data.items
-                completion(.success(blogs))
+                let data = try JSONDecoder().decode(TodayResponse.self, from: data!)
+                let matchs = data.matchs
+                completion(.success(matchs))
             } catch {
                 completion(.failure(error))
             }
@@ -38,10 +38,10 @@ class BlogStore: ObservableObject {
 
     
     init() {
-        fetchBlogs { resp in
+        fetchMatchs { resp in
             DispatchQueue.main.async {
-                if case .success(let blogs) = resp {
-                    self.blogs = blogs
+                if case .success(let matchs) = resp {
+                    self.matchs = matchs
                 } else if case .failure(let error) = resp {
                     self.errorMessage = error.localizedDescription
                     self.showError = true
@@ -50,3 +50,4 @@ class BlogStore: ObservableObject {
         }
     }
 }
+

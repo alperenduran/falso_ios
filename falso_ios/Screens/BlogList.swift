@@ -14,14 +14,15 @@ struct BlogList: View {
         NavigationView {
             List(self.blogStore.blogs) { blog in
                 BlogView(blog: blog)
-            }.navigationBarTitle("Blogs")
+            }.navigationBarTitle("Blog Yazıları")
             .alert(isPresented: $blogStore.showError) {
                  Alert(
                     title: Text("Error"),
                     message: Text(blogStore.errorMessage)
                 )
             }
-        }
+        }.navigationBarColor(.some(UIColor(named: "falsoRed")!))
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -51,7 +52,7 @@ struct BlogView: View {
                     WebView(html: self.blog.cssContent)
                         .padding(.horizontal, 8)
                         .navigationBarTitle("\(self.blog.title)", displayMode: .inline)
-                }
+                }.navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

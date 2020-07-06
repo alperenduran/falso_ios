@@ -31,8 +31,10 @@ struct PodcastList: View {
                 }
                     
                 Spacer()
-            }.navigationBarTitle("Podcast")
-        }
+            }.padding(.top)
+            .navigationBarTitle("Podcastler")
+        }.navigationBarColor(.some(UIColor(named: "falsoRed")!))
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

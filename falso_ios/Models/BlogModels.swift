@@ -49,7 +49,7 @@ struct Blog: Codable, Identifiable {
                 font-size: 50pt;
                 font-weight: bold;
                 font-style: normal;
-            font-family: sans-serif;
+                font-family: sans-serif;
             }
 
             p {

@@ -38,7 +38,7 @@ class PodcastStore: ObservableObject {
 
     
     init() {
-        fetchPodcasts() { resp in
+        fetchPodcasts { resp in
             if case .success(let podcasts) = resp {
                 self.podcasts = podcasts
             } else if case .failure(let error) = resp {
